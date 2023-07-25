@@ -1,0 +1,41 @@
+.options__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    height: 50px;
+    border-radius: 5px;
+    border-width: 0;
+    color: var(--main-light);
+    font-size: 1.2rem;
+    width: 50px;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .options__button:hover {
+    background-color: var(--primary-color-hover);
+  }
+  
+  .options__button:active {
+    background-color: var(--primary-color-hover);
+    border-color: var(--main-darklg);
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    height: 46px;
+    width: 46px;
+  }
+  
+  .background__red {
+    background-color: var(--primary-red);
+  }
+  
+  .options__button.background__red:hover, 
+  .options__button.background__red:active {
+    background-color: var(--primary-red-hover);
+  }

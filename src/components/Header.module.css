@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    position: relative;
+    width: 100%;
+    background-color: var(--main-darklg);
+  }
+  
+  .logo > h3 {
+    color: var(--main-light);
+  }
+
+.header__back {
+    position: absolute;
+    font-size: 1.3rem;
+    top: 20px;
+    left: 28px;
+    color: #fff;
+    cursor: pointer;
+    padding-left: 8px;
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+    border-radius: 50%;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .header__back:hover, 
+  .header__back:active {
+    background-color: var(--main-darklg-shadow-light);
+  }
