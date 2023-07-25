@@ -1,14 +1,26 @@
 import './App.css';
-import Header from './components/Header';
-import Main from './components/Main';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import RootLayout from './pages/RootLayout';
+import IndexPage, { loader as indexLoader } from './pages/Index';
+import Main from './pages/Main';
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      { index: true, element: <IndexPage />, loader: indexLoader },
+      {
+        path: ':roomId',
+        element: <Main/>,
+      }
+    ],
+  }
+]);
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Main/>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

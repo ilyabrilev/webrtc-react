@@ -1,0 +1,24 @@
+.message {
+    display: flex;
+    flex-direction: column;
+  }
+
+.message_header {
+  color: #eeeeee;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.message_header > svg {
+  margin-right: 0.7rem;
+  font-size: 1.5rem;
+}
+
+.message_text {
+  background-color: #eeeeee;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+}
