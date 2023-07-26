@@ -1,8 +1,8 @@
 import { FaPaperPlane } from 'react-icons/fa6';
 import classes from './ChatForm.module.css';
-import Button from './Button';
+import Button from '../UI/Button';
 import { useState } from 'react';
-import { socket } from '../socket';
+import { socket } from '../../socket';
 
 const ChatForm = () => {
     const [messageText, setMessageText] = useState('');

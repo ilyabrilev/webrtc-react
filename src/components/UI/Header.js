@@ -2,7 +2,7 @@ import { FaAngleLeft } from 'react-icons/fa6';
 
 import classes from './Header.module.css';
 import { useContext } from 'react';
-import UiContext from '../store/ui-context';
+import UiContext from '../../store/ui-context';
 
 const Header = () => {
     const uiCtx = useContext(UiContext);

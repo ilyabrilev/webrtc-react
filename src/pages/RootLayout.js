@@ -1,4 +1,4 @@
-import Header from '../components/Header';
+import Header from '../components/UI/Header';
 import { Outlet } from "react-router-dom";
 import { UiContextProvider } from '../store/ui-context';
 
