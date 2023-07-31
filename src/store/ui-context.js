@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
+import { io, URL, Options as SocketOptions } from '../socket';
+import { Peer, Connection as PeerConnection, Options as PeerOptions } from '../peer';
 
 const UiContext = React.createContext({
     minChatShown: false,
@@ -7,20 +9,50 @@ const UiContext = React.createContext({
         userName: '',
         userId: '',
     },
-    storeCurrentUser: () => {},
+    storeUserName: () => { },
+    storeUserId: () => { },
+    setupSocket: () => {},
+    socket: {
+        connect: () => { },
+        on: () => { },
+        off: () => { },
+    },
+    setupPeer: () => {},
+    peer: {
+        on: () => { },
+        off: () => { },
+    },
 });
 
 export const UiContextProvider = (props) => {
     const [minChatShown, setMinChatShown] = useState(false);
     const [currentUser, setCurrentUser] = useState({});
+    const [socket, setSocket] = useState({});
+    const [peer, setPeer] = useState({});
 
     const minChatToggle = () => {
         setMinChatShown(prevState => !prevState);
     }
 
-    const storeCurrentUser = (userName, userId) => {
-        setCurrentUser({userName, userId});
+    const storeUserName = (userName) => {
+        setCurrentUser(prevState => ({ userId: prevState.userId, userName }));
     }
+
+    const storeUserId = (userId) => {
+        console.log('saving user id: ', userId);
+        setCurrentUser(prevState => ({ userId, userName: prevState.userName }));
+    }
+
+    const setupSocket = useCallback(() => {
+        // "undefined" means the URL will be computed from the `window.location` object
+        const socket = io(URL, SocketOptions);
+        setSocket(socket);
+    }, []);
+
+    const setupPeer = useCallback(() => {
+        const peer = new Peer(PeerConnection, PeerOptions);
+        setPeer(peer);
+    }, []);
 
     return (
         <UiContext.Provider
@@ -28,7 +60,12 @@ export const UiContextProvider = (props) => {
                 minChatShown,
                 minChatToggle,
                 currentUser,
-                storeCurrentUser
+                storeUserName,
+                storeUserId,
+                socket,
+                setupSocket,
+                peer,
+                setupPeer,
             }}
         >
             {props.children}

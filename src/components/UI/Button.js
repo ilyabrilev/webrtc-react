@@ -12,6 +12,7 @@ const Button = (props) => {
     return (
         <div onClick={props.onClick} className={[classes.options__button, ...additionalClasses].join(' ')}>
             {props.icon}
+            {props.children}
         </div>
     )
 };

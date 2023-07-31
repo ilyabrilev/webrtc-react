@@ -1,17 +1,19 @@
 import { FaPaperPlane } from 'react-icons/fa6';
 import classes from './ChatForm.module.css';
 import Button from '../UI/Button';
-import { useState } from 'react';
-import { socket } from '../../socket';
+import { useContext, useState } from 'react';
+import UiContext from '../../store/ui-context';
+// import { socket } from '../../socket';
 
 const ChatForm = () => {
+    const { socket } = useContext(UiContext);
     const [messageText, setMessageText] = useState('');
 
     const sendMessageHandler = (event) => {
         event.preventDefault();
         if (messageText.trim().length !== 0) {
-          socket.emit('message:create', messageText);
-          setMessageText('');
+            socket.emit('message:create', messageText);
+            setMessageText('');
         }
     }
 

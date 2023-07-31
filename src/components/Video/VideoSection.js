@@ -9,7 +9,7 @@ import VideosGroup from './VideosGroup';
 const VideoSection = () => {
     const uiCtx = useContext(UiContext);
 
-    const [isVideoStopped, setIsVideoStopped] = useState(false);
+    const [isVideoStopped, setIsVideoStopped] = useState(true);
     const [isMuted, setIsMuted] = useState(true);
 
     const stopVideoHandler = () => {

@@ -2,14 +2,18 @@ import classes from './ChatSection.module.css';
 import { useContext, useEffect, useState } from 'react';
 import UiContext from '../../store/ui-context';
 import ChatForm from './ChatForm';
-import { socket } from '../../socket';
 import Message from './Message';
+import { isObjectEmpty } from '../../utils';
 
 const ChatSection = () => {
-    const uiCtx = useContext(UiContext);
+    const {currentUser, minChatShown, socket} = useContext(UiContext);
     const [messages, setMessages] = useState([]);
 
     useEffect(() => {
+        if (isObjectEmpty(socket)) {
+            return;
+        }
+
         const newMessageHandler = (message, userName, userId) => {
             console.log('Got message ' + message + ' from ' + userName);
             //ToDo: better ids
@@ -20,10 +24,10 @@ const ChatSection = () => {
         return () => {
             socket.off('message:new', newMessageHandler);
           }; 
-    }, []);
+    }, [socket]);
 
     return (
-        <section className={classes.main__right + ' ' + (uiCtx.minChatShown ? 'flex_on_small' : 'hide_on_small')}>
+        <section className={classes.main__right + ' ' + (minChatShown ? 'flex_on_small' : 'hide_on_small')}>
             <div className={classes.main__chat_window}>
                 <div className={classes.messages}>
                     {messages.map(item => (
@@ -31,7 +35,7 @@ const ChatSection = () => {
                             key={item.id} 
                             text={item.message} 
                             userName={item.userName}
-                            isMine={item.userId === uiCtx.currentUser.userId}
+                            isMine={item.userId === currentUser.userId}
                         />)
                     )}
                 </div>

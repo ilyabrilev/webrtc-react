@@ -24,7 +24,7 @@ const Video = (props) => {
 
     return <>
         <div>
-            <span style={{ color: 'white' }}>{props.userId}</span>
+            <span style={{ color: 'white' }}>{props.userName ?? props.userId}{props.isMe ? '(Me)': ''}</span>
             <video style={{ display: 'block' }}
                 className={classes.video}
                 ref={videoRef}
