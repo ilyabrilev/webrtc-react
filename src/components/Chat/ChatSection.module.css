@@ -21,7 +21,7 @@
 }
 
 @media (max-width: 700px) {
-  .main__right {
+  .main-right {
     width: 100%;
     flex: 1;
   }

@@ -7,11 +7,14 @@ import Modal from "../components/UI/Modal";
 
 import UiContext from "../store/ui-context";
 import { isObjectEmpty } from "../utils/utils";
+import NamePickModal from "../components/UI/NamePickModal";
+import SuccessNameModal from "../components/UI/SuccessNameModal";
 
 const Main = () => {
   const roomId = useParams().roomId;
   const { storeUserName, storeUserId, currentUser, socket, setupSocket, peer, setupPeer } = useContext(UiContext);
   const [showNameModal, setShowNameModal] = useState(true);
+  const [showSuccessNameModal, setShowSuccessNameModal] = useState(false);
 
   //get socket
   useEffect(() => {
@@ -52,18 +55,27 @@ const Main = () => {
     });
   }, [peer, socket, currentUser.userName, roomId, storeUserId])
 
-  const modalCloseHandler = () => {
-    setShowNameModal(false);
-  }
+  // const modalCloseHandler = () => {
+  //   setShowNameModal(false);
+  // }
 
   const nameSaveHandler = (name) => {
     setShowNameModal(false);
     storeUserName(name);
+
+    setShowSuccessNameModal(true);
+
+    setTimeout(() => {
+      setShowSuccessNameModal(false);
+    }, 1500)
   }
 
   return (
     <>
-      {showNameModal && <Modal onClose={modalCloseHandler} onNameSave={nameSaveHandler} />}
+      {showNameModal && <Modal><NamePickModal onNameSave={nameSaveHandler} /> </Modal>}
+      {showSuccessNameModal && <Modal onClose={() => setShowSuccessNameModal(false)}>
+        <SuccessNameModal userName={currentUser.userName} onClose={() => setShowSuccessNameModal(false)}/>
+      </Modal>}
       <VideoSection />
       <ChatSection />
     </>
