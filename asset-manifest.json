@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/webrtc-react/static/css/main.a4bdcb64.css",
+    "main.js": "/webrtc-react/static/js/main.2cc3a7dd.js",
+    "static/js/787.b97f59e1.chunk.js": "/webrtc-react/static/js/787.b97f59e1.chunk.js",
+    "index.html": "/webrtc-react/index.html",
+    "main.a4bdcb64.css.map": "/webrtc-react/static/css/main.a4bdcb64.css.map",
+    "main.2cc3a7dd.js.map": "/webrtc-react/static/js/main.2cc3a7dd.js.map",
+    "787.b97f59e1.chunk.js.map": "/webrtc-react/static/js/787.b97f59e1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a4bdcb64.css",
+    "static/js/main.2cc3a7dd.js"
+  ]
+}
