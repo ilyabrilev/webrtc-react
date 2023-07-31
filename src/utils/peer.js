@@ -4,7 +4,7 @@ export { Peer };
 export const Connection = undefined;
 export const Options = {
   path: "/peerjs",
-  host: "localhost",
-  port: 3001,
+  host: process.env.REACT_APP_PEER_HOST,
+  port: process.env.REACT_APP_PEER_PORT,
   secure: true,
 }
