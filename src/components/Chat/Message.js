@@ -4,11 +4,11 @@ import classes from './Message.module.css';
 
 const Message = (props) => {
     return <div className={classes.message}>
-        <div className={classes.message_header}>
+        <div className={classes["message-header"]}>
             <FaRegCircleUser /> 
             <span> {props.isMine ? 'Me: ' : ''}{props.userName}</span>
         </div>
-        <span className={classes.message_text}>{props.text}</span>
+        <span className={classes["message-text"]}>{props.text}</span>
     </div>;
 }
 

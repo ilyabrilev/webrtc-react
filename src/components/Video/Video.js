@@ -1,14 +1,8 @@
 import { useEffect, useRef } from "react";
 import classes from './VideosGroup.module.css';
 
-
 const Video = (props) => {
     const videoRef = useRef();
-
-    const loadedmetadataHandler = (e) => {
-        // console.log('loadedmetadataHandler happenned!');
-        // console.log(e);
-    }
 
     useEffect(() => {
         videoRef.current.srcObject = props.stream;
@@ -22,19 +16,17 @@ const Video = (props) => {
         videoRef.current.srcObject.getVideoTracks()[0].enabled = !props.isVideoStopped;
     }, [props.isVideoStopped]);
 
-    return <>
-        <div>
-            <span style={{ color: 'white' }}>{props.userName ?? props.userId}{props.isMe ? '(Me)': ''}</span>
-            <video style={{ display: 'block' }}
-                className={classes.video}
-                ref={videoRef}
-                onLoadedMetadata={loadedmetadataHandler}
-                autoPlay
-                muted={props.isMe}                
-            >   
-            </video>
-        </div>
-    </>
+    return <div>
+        <span className={classes['video-header']}>{props.userName ?? props.userId}{props.isMe ? ' (Me)' : ''}</span>
+        <video style={{  }}
+            className={classes.video}
+            ref={videoRef}
+            autoPlay
+            muted={props.isMe}
+        >
+        </video>
+    </div>
+
 }
 
 export default Video;

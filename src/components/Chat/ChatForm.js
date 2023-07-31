@@ -22,7 +22,7 @@ const ChatForm = () => {
     }
 
     return (
-        <form onSubmit={sendMessageHandler} className={classes.main__message_container}>
+        <form onSubmit={sendMessageHandler} className={classes["message-container"]}>
             <input value={messageText} onChange={messageChangeHandler} type="text" autoComplete="off" placeholder="Введите сообщение..." />
             <Button onClick={sendMessageHandler} icon={<FaPaperPlane />} />
         </form>

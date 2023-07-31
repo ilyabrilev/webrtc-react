@@ -1,4 +1,4 @@
-.options__button {
+.options-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,11 +17,11 @@
   -ms-user-select: none;
 }
 
-.options__button:hover {
+.options-button:hover {
   background-color: var(--primary-color-hover);
 }
 
-.options__button:active {
+.options-button:active {
   background-color: var(--primary-color-hover);
   border-color: var(--main-darklg);
   border-width: 2px;
@@ -31,11 +31,11 @@
   width: 46px;
 }
 
-.background__red {
+.background-red {
   background-color: var(--primary-red);
 }
 
-.options__button.background__red:hover,
-.options__button.background__red:active {
+.options-button.background-red:hover,
+.options-button.background-red:active {
   background-color: var(--primary-red-hover);
 }

@@ -1,4 +1,4 @@
-.videos__group {
+.videos-group {
   flex-grow: 1;
   display: flex;
   justify-content: center;
@@ -16,10 +16,18 @@
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
+  display: block;
 }
 
 .video-grid {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.video-header {
+  color: #eeeeee;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin: 0.8rem;
 }

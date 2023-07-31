@@ -11,7 +11,7 @@ const Header = () => {
             <div className={classes.logo}>
                 <div 
                     onClick={uiCtx.minChatToggle}
-                    className={classes.header__back + ' hide_on_big ' + (uiCtx.minChatShown ? 'block_on_small' : 'hide_on_small')}
+                    className={classes["header-back"] + ' hide-on-big ' + (uiCtx.minChatShown ? 'block-on-small' : 'hide-on-small')}
                 >
                     <FaAngleLeft />
                 </div>

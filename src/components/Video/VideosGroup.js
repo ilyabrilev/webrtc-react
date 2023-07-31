@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import classes from './VideosGroup.module.css';
 import Video from './Video';
 import UiContext from '../../store/ui-context';
-import { isObjectEmpty } from '../../utils';
+import { isObjectEmpty } from '../../utils/utils';
 
 const VideosGroup = (props) => {
     const [videos, setVideos] = useState([]);
@@ -150,7 +150,7 @@ const VideosGroup = (props) => {
     }, [currentUser, myVideoStream, socket, peer]);
 
     return (
-        <div className={classes.videos__group}>
+        <div className={classes["videos-group"]}>
             <div className={classes["video-grid"]}>
                 {myVideoStream && <Video
                     userId={currentUser.userId}

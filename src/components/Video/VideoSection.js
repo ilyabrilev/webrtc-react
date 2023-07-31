@@ -29,18 +29,18 @@ const VideoSection = () => {
     }
 
     return (
-        <section className={classes.main__left + ' ' + (uiCtx.minChatShown ? 'hide_on_small' : 'flex_on_small')}>
+        <section className={classes["main-left"] + ' ' + (uiCtx.minChatShown ? 'hide-on-small' : 'flex-on-small')}>
             <VideosGroup isSelfMuted={isMuted} isSelfVideoStopped={isVideoStopped}/>
             <div className={classes.options}>
-                <div className={classes.options__left}>
+                <div className={classes["options-left"]}>
                     <Button onClick={stopVideoHandler} red={isVideoStopped} icon={isVideoStopped ? <FaVideoSlash /> : <FaVideo />} />
                     <Button onClick={muteHandler} red={isMuted} icon={isMuted ? <FaMicrophoneLinesSlash /> : <FaMicrophone />} />
-                    <Button className={'hide_on_big ' + (uiCtx.minChatShown ? 'hide_on_small' : 'flex_on_small')}
+                    <Button className={'hide-on-big ' + (uiCtx.minChatShown ? 'hide-on-small' : 'flex-on-small')}
                         onClick={showChatHandler}
                         icon={<FaRegComments />}
                     />
                 </div>
-                <div className={classes.options__right}>
+                <div className={classes["options-right"]}>
                     <Button onClick={inviteHandler} icon={<FaUserPlus />} />
                 </div>
             </div>

@@ -1,6 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-// import { socket } from '../socket';
-// import peer from "../peer";
 import { useParams } from "react-router-dom";
 
 import ChatSection from "../components/Chat/ChatSection";
@@ -8,7 +6,7 @@ import VideoSection from "../components/Video/VideoSection";
 import Modal from "../components/UI/Modal";
 
 import UiContext from "../store/ui-context";
-import { isObjectEmpty } from "../utils";
+import { isObjectEmpty } from "../utils/utils";
 
 const Main = () => {
   const roomId = useParams().roomId;

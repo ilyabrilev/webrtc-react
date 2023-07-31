@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from 'react';
 import UiContext from '../../store/ui-context';
 import ChatForm from './ChatForm';
 import Message from './Message';
-import { isObjectEmpty } from '../../utils';
+import { isObjectEmpty } from '../../utils/utils';
 
 const ChatSection = () => {
     const {currentUser, minChatShown, socket} = useContext(UiContext);
@@ -27,8 +27,8 @@ const ChatSection = () => {
     }, [socket]);
 
     return (
-        <section className={classes.main__right + ' ' + (minChatShown ? 'flex_on_small' : 'hide_on_small')}>
-            <div className={classes.main__chat_window}>
+        <section className={classes["main-right"] + ' ' + (minChatShown ? 'flex-on-small' : 'hide-on-small')}>
+            <div className={classes["chat-window"]}>
                 <div className={classes.messages}>
                     {messages.map(item => (
                         <Message 

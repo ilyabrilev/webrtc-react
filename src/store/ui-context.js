@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import { io, URL, Options as SocketOptions } from '../socket';
-import { Peer, Connection as PeerConnection, Options as PeerOptions } from '../peer';
+import { io, URL, Options as SocketOptions } from '../utils/socket';
+import { Peer, Connection as PeerConnection, Options as PeerOptions } from '../utils/peer';
 
 const UiContext = React.createContext({
     minChatShown: false,

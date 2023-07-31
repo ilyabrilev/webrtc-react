@@ -14,29 +14,29 @@ code {
 
 
 @media (max-width: 700px) {
-  .hide_on_small {
+  .hide-on-small {
     display: none !important;
   }
 
-  .block_on_small {
+  .block-on-small {
     display: block !important;
   }
 
-  .flex_on_small {
+  .flex-on-small {
     display: flex !important;
   }
 }
 
 @media (min-width: 701px) {
-  .hide_on_big {
+  .hide-on-big {
     display: none !important;
   }
 
-  .block_on_big {
+  .block-on-big {
     display: block !important;
   }
 
-  .flex_on_big {
+  .flex-on-big {
     display: flex !important;
   }
 }

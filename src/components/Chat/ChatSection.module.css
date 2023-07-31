@@ -1,16 +1,16 @@
-.main__right {
+.main-right {
   display: flex;
   flex-direction: column;
   flex: 0.3;
   background-color: var(--main-darklg-shadow);
 }
 
-.main__chat_window {
+.chat-window {
   flex-grow: 1;
   overflow-y: scroll;
 }
 
-.main__chat_window::-webkit-scrollbar {
+.chat-window::-webkit-scrollbar {
   display: none;
 }
 
