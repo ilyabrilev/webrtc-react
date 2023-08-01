@@ -5,8 +5,7 @@ import IndexPage, { loader as indexLoader } from './pages/Index';
 import Main from './pages/Main';
 
 
-const router = createBrowserRouter([
-  
+const router = createBrowserRouter([  
   {
     path: '/',
     element: <RootLayout />,
