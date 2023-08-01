@@ -6,6 +6,7 @@ import Main from './pages/Main';
 
 
 const router = createBrowserRouter([
+  
   {
     path: '/',
     element: <RootLayout />,
